@@ -18,6 +18,8 @@
 		0E69EE1A175C3E1800D603AA /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 0E69EE19175C3E1800D603AA /* Default-568h@2x.png */; };
 		0E69EE1D175C3E1800D603AA /* MainStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0E69EE1B175C3E1800D603AA /* MainStoryboard.storyboard */; };
 		0E69EE20175C3E1800D603AA /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0E69EE1F175C3E1800D603AA /* ViewController.m */; };
+		0E69EE28175C43BB00D603AA /* FacebookSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0E69EE27175C43BA00D603AA /* FacebookSDK.framework */; };
+		0E69EE2A175C440500D603AA /* FacebookSDKResources.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 0E69EE29175C440500D603AA /* FacebookSDKResources.bundle */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -37,6 +39,8 @@
 		0E69EE1C175C3E1800D603AA /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard.storyboard; sourceTree = "<group>"; };
 		0E69EE1E175C3E1800D603AA /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
 		0E69EE1F175C3E1800D603AA /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		0E69EE27175C43BA00D603AA /* FacebookSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FacebookSDK.framework; path = "../../../Libraries/facebook-ios-sdk/build/FacebookSDK.framework"; sourceTree = "<group>"; };
+		0E69EE29175C440500D603AA /* FacebookSDKResources.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; name = FacebookSDKResources.bundle; path = "../../../Libraries/facebook-ios-sdk/build/FacebookSDK.framework/Versions/A/Resources/FacebookSDKResources.bundle"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -47,6 +51,7 @@
 				0E69EE04175C3E1800D603AA /* UIKit.framework in Frameworks */,
 				0E69EE06175C3E1800D603AA /* Foundation.framework in Frameworks */,
 				0E69EE08175C3E1800D603AA /* CoreGraphics.framework in Frameworks */,
+				0E69EE28175C43BB00D603AA /* FacebookSDK.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -73,6 +78,8 @@
 		0E69EE02175C3E1800D603AA /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				0E69EE29175C440500D603AA /* FacebookSDKResources.bundle */,
+				0E69EE27175C43BA00D603AA /* FacebookSDK.framework */,
 				0E69EE03175C3E1800D603AA /* UIKit.framework */,
 				0E69EE05175C3E1800D603AA /* Foundation.framework */,
 				0E69EE07175C3E1800D603AA /* CoreGraphics.framework */,
@@ -163,6 +170,7 @@
 				0E69EE18175C3E1800D603AA /* Default@2x.png in Resources */,
 				0E69EE1A175C3E1800D603AA /* Default-568h@2x.png in Resources */,
 				0E69EE1D175C3E1800D603AA /* MainStoryboard.storyboard in Resources */,
+				0E69EE2A175C440500D603AA /* FacebookSDKResources.bundle in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -260,6 +268,10 @@
 		0E69EE24175C3E1800D603AA /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)/../../../Libraries/facebook-ios-sdk/build\"",
+				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "TestFacebookSDK/TestFacebookSDK-Prefix.pch";
 				INFOPLIST_FILE = "TestFacebookSDK/TestFacebookSDK-Info.plist";
@@ -271,6 +283,10 @@
 		0E69EE25175C3E1800D603AA /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)/../../../Libraries/facebook-ios-sdk/build\"",
+				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "TestFacebookSDK/TestFacebookSDK-Prefix.pch";
 				INFOPLIST_FILE = "TestFacebookSDK/TestFacebookSDK-Info.plist";
