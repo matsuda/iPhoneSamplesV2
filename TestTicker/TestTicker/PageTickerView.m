@@ -50,30 +50,57 @@
     }
     [self.itemViews removeAllObjects];
     [self prepareTicker];
+    [self setNeedsLayout];
 }
 
 - (void)layoutSubviews
 {
+    static NSInteger minViewCount = 3;
+
     _numberOfItems = [self.dataSource numberOfItemsInPageTickerView:self];
-    NSInteger count = 0;
-    for (NSInteger i = 0; i < _numberOfItems; i++) {
-        CGRect rect = CGRectZero;
-        rect.size = _itemSize;
-        rect.origin.y = _itemSize.height * i;
-        UIView *view = [self.dataSource pageTickerView:self viewAtIndex:i];
-        view.frame = rect;
-        [self.scrollView addSubview:view];
-        [self.itemViews addObject:view];
-        count++;
+
+    switch (_numberOfItems) {
+        case 0:
+            break;
+        case 1: {
+            [self insertViewAtIndex:0];
+            break;
+        }
+        default: {
+            NSInteger viewCount = _numberOfItems;
+            while (viewCount < minViewCount) {
+                viewCount *= 2;
+            }
+
+            for (NSInteger i = 0; i < viewCount; i++) {
+                [self insertViewAtIndex:i];
+            }
+            break;
+        }
     }
+    NSInteger count = [self.itemViews count];
     _topIndex = 0;
-    _bottomIndex = _numberOfItems - 1;
+    _bottomIndex = count - 1;
     if (_bottomIndex < 0) {
         _bottomIndex = 0;
     }
     self.scrollView.contentSize = CGSizeMake(_itemSize.width, _itemSize.height * count);
-    [self moveOffsetToIndex:0];
-    [self startAutoScroll];
+    if (_numberOfItems > 1) {
+        [self moveOffsetToIndex:0];
+        [self startAutoScroll];
+    }
+}
+
+- (void)insertViewAtIndex:(NSInteger)index
+{
+    CGRect rect = CGRectZero;
+    rect.size = _itemSize;
+    rect.origin.y = _itemSize.height * index;
+    NSInteger targetIndex = index % _numberOfItems;
+    UIView *view = [self.dataSource pageTickerView:self viewAtIndex:targetIndex];
+    view.frame = rect;
+    [self.scrollView addSubview:view];
+    [self.itemViews addObject:view];
 }
 
 - (void)setupDefault
@@ -113,17 +140,20 @@
 - (void)scrollVIew:(UIScrollView *)scrollView willResetOffsetToPositive:(BOOL)positive
 {
     [self stopTimerSafety];
+}
+
+- (void)scrollVIew:(UIScrollView *)scrollView didResetOffsetToPositive:(BOOL)positive
+{
     [self startAutoScroll];
 }
 
 - (void)adjustItemsInScrollView:(UIScrollView *)scrollView
 {
-    if (![self.itemViews count]) {
-        return;
-    }
+    if (![self.itemViews count]) return;
+
     CGFloat height = _itemSize.height;
     CGPoint point = scrollView.contentOffset;
-    NSInteger maxIndex = _numberOfItems - 1;
+    NSInteger maxIndex = [self maxIndexItemViews];
 
     if (point.y >= height*2) {
         [self scrollVIew:scrollView willResetOffsetToPositive:YES];
@@ -143,6 +173,7 @@
         _topIndex = [self nextBottomIndex:_topIndex];
         _bottomIndex = [self nextBottomIndex:_bottomIndex];
         [self resetContentOffsetScrollView:scrollView];
+        [self scrollVIew:scrollView didResetOffsetToPositive:YES];
     } else if (point.y <= 0) {
         [self scrollVIew:scrollView willResetOffsetToPositive:NO];
         UIView *bottomView = self.itemViews[_bottomIndex];
@@ -161,12 +192,13 @@
         _topIndex = [self nextTopIndex:_topIndex];
         _bottomIndex = [self nextTopIndex:_bottomIndex];
         [self resetContentOffsetScrollView:scrollView];
+        [self scrollVIew:scrollView didResetOffsetToPositive:NO];
     }
 }
 
 - (void)moveOffsetToIndex:(NSInteger)index
 {
-    NSInteger maxIndex = _numberOfItems - 1;
+    NSInteger maxIndex = [self maxIndexItemViews];
     if (index > maxIndex) {
         index = 0;
     } else if (index < 0) {
@@ -179,7 +211,7 @@
 
 - (NSInteger)nextTopIndex:(NSInteger)index
 {
-    NSInteger maxIndex = _numberOfItems - 1;
+    NSInteger maxIndex = [self maxIndexItemViews];
     NSInteger nextIdx = index - 1;
     if (nextIdx < 0) {
         nextIdx = maxIndex;
@@ -189,13 +221,24 @@
 
 - (NSInteger)nextBottomIndex:(NSInteger)index
 {
-    NSInteger maxIndex = _numberOfItems - 1;
+    NSInteger maxIndex = [self maxIndexItemViews];
     NSInteger nextIdx = index + 1;
     if (nextIdx > maxIndex) {
         nextIdx = 0;
     }
     return nextIdx;
 }
+
+- (NSInteger)maxIndexItemViews
+{
+    NSInteger count = [self.itemViews count] - 1;
+    if (count < 0) {
+        count = 0;
+    }
+    return count;
+}
+
+#pragma mark - UIScrollViewDelegate
 
 - (void)scrollViewDidScroll:(UIScrollView *)scrollView
 {
@@ -214,7 +257,7 @@
 
 - (void)startAutoScroll
 {
-    if (_numberOfItems > 0) {
+    if (_numberOfItems > 1) {
         [NSTimer scheduledTimerWithTimeInterval:zStayScrollTimeInterval target:self selector:@selector(restartAutoScroll) userInfo:nil repeats:NO];
     }
 }

@@ -43,7 +43,7 @@ static UIColor * randomColorWithRGB() {
 	// Do any additional setup after loading the view, typically from a nib.
     self.view.backgroundColor = [UIColor lightGrayColor];
     self.items = [@[] mutableCopy];
-    for (int i = 0; i < 5; i++) {
+    for (int i = 0; i < 3; i++) {
         [self.items addObject:[NSString stringWithFormat:@"test test test test test test %d", i]];
     }
 
