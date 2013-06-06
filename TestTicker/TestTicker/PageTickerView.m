@@ -87,7 +87,7 @@
     self.scrollView.contentSize = CGSizeMake(_itemSize.width, _itemSize.height * count);
     if (_numberOfItems > 1) {
         [self moveOffsetToIndex:0];
-        [self startAutoScroll];
+        [self stayAutoScroll];
     }
 }
 
@@ -124,7 +124,6 @@
         scrollView.delegate = self;
         scrollView.pagingEnabled = YES;
         scrollView.bounces = NO;
-        scrollView.backgroundColor = [UIColor orangeColor];
         [self addSubview:scrollView];
         _scrollView = scrollView;
     }
@@ -137,16 +136,6 @@
     [scrollView setContentOffset:CGPointMake(0, height) animated:NO];
 }
 
-- (void)scrollVIew:(UIScrollView *)scrollView willResetOffsetToPositive:(BOOL)positive
-{
-    [self stopTimerSafety];
-}
-
-- (void)scrollVIew:(UIScrollView *)scrollView didResetOffsetToPositive:(BOOL)positive
-{
-    [self startAutoScroll];
-}
-
 - (void)adjustItemsInScrollView:(UIScrollView *)scrollView
 {
     if (![self.itemViews count]) return;
@@ -156,7 +145,6 @@
     NSInteger maxIndex = [self maxIndexItemViews];
 
     if (point.y >= height*2) {
-        [self scrollVIew:scrollView willResetOffsetToPositive:YES];
         UIView *topView = self.itemViews[_topIndex];
         [self.itemViews removeObject:topView];
         [self.itemViews addObject:topView];
@@ -173,9 +161,7 @@
         _topIndex = [self nextBottomIndex:_topIndex];
         _bottomIndex = [self nextBottomIndex:_bottomIndex];
         [self resetContentOffsetScrollView:scrollView];
-        [self scrollVIew:scrollView didResetOffsetToPositive:YES];
     } else if (point.y <= 0) {
-        [self scrollVIew:scrollView willResetOffsetToPositive:NO];
         UIView *bottomView = self.itemViews[_bottomIndex];
         [self.itemViews removeObject:bottomView];
         [self.itemViews insertObject:bottomView atIndex:0];
@@ -192,7 +178,6 @@
         _topIndex = [self nextTopIndex:_topIndex];
         _bottomIndex = [self nextTopIndex:_bottomIndex];
         [self resetContentOffsetScrollView:scrollView];
-        [self scrollVIew:scrollView didResetOffsetToPositive:NO];
     }
 }
 
@@ -255,16 +240,15 @@
     _timer = nil;
 }
 
-- (void)startAutoScroll
+- (void)stayAutoScroll
 {
     if (_numberOfItems > 1) {
-        [NSTimer scheduledTimerWithTimeInterval:zStayScrollTimeInterval target:self selector:@selector(restartAutoScroll) userInfo:nil repeats:NO];
+        [NSTimer scheduledTimerWithTimeInterval:zStayScrollTimeInterval target:self selector:@selector(autoScrolling) userInfo:nil repeats:NO];
     }
 }
 
-- (void)restartAutoScroll
+- (void)autoScrolling
 {
-    [self stopTimerSafety];
     self.timer = [NSTimer timerWithTimeInterval:zScrollTimeInterval target:self selector:@selector(timerDidFire:) userInfo:nil repeats:YES];
     [[NSRunLoop currentRunLoop] addTimer:self.timer forMode:NSRunLoopCommonModes];
 }
@@ -275,8 +259,12 @@
     p.y += 1;
     CGFloat height = _itemSize.height;
     CGPoint targetOffset = CGPointMake(0, height * 2);
-    if (p.y <= targetOffset.y) {
+    if (p.y < targetOffset.y) {
         self.scrollView.contentOffset = p;
+    } else {
+        [self stopTimerSafety];
+        self.scrollView.contentOffset = p;
+        [self stayAutoScroll];
     }
 }
 
