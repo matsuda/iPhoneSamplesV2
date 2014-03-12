@@ -14,13 +14,16 @@
 		0EDDDF8118CEB49300068F55 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 0EDDDF8018CEB49300068F55 /* main.m */; };
 		0EDDDF8518CEB49300068F55 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 0EDDDF8418CEB49300068F55 /* AppDelegate.m */; };
 		0EDDDF8818CEB49300068F55 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0EDDDF8618CEB49300068F55 /* Main.storyboard */; };
-		0EDDDF8B18CEB49300068F55 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0EDDDF8A18CEB49300068F55 /* ViewController.m */; };
 		0EDDDF8D18CEB49300068F55 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0EDDDF8C18CEB49300068F55 /* Images.xcassets */; };
 		0EDDDF9418CEB49300068F55 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0EDDDF9318CEB49300068F55 /* XCTest.framework */; };
 		0EDDDF9518CEB49300068F55 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0EDDDF7418CEB49300068F55 /* Foundation.framework */; };
 		0EDDDF9618CEB49300068F55 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0EDDDF7818CEB49300068F55 /* UIKit.framework */; };
 		0EDDDF9E18CEB49300068F55 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 0EDDDF9C18CEB49300068F55 /* InfoPlist.strings */; };
 		0EDDDFA018CEB49300068F55 /* TestCollectionViewTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 0EDDDF9F18CEB49300068F55 /* TestCollectionViewTests.m */; };
+		0EDDDFAB18CEBA6A00068F55 /* CollectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0EDDDFAA18CEBA6A00068F55 /* CollectionViewController.m */; };
+		0EDDDFAE18CED5F100068F55 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0EDDDFAD18CED5F100068F55 /* ViewController.m */; };
+		0EDDDFB118CED82C00068F55 /* CollectionCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0EDDDFB018CED82C00068F55 /* CollectionCell.m */; };
+		0EDDDFB318CED84B00068F55 /* CollectionCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0EDDDFB218CED84B00068F55 /* CollectionCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -45,14 +48,19 @@
 		0EDDDF8318CEB49300068F55 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		0EDDDF8418CEB49300068F55 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		0EDDDF8718CEB49300068F55 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		0EDDDF8918CEB49300068F55 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		0EDDDF8A18CEB49300068F55 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		0EDDDF8C18CEB49300068F55 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		0EDDDF9218CEB49300068F55 /* TestCollectionViewTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TestCollectionViewTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		0EDDDF9318CEB49300068F55 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
 		0EDDDF9B18CEB49300068F55 /* TestCollectionViewTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "TestCollectionViewTests-Info.plist"; sourceTree = "<group>"; };
 		0EDDDF9D18CEB49300068F55 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		0EDDDF9F18CEB49300068F55 /* TestCollectionViewTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TestCollectionViewTests.m; sourceTree = "<group>"; };
+		0EDDDFA918CEBA6A00068F55 /* CollectionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CollectionViewController.h; sourceTree = "<group>"; };
+		0EDDDFAA18CEBA6A00068F55 /* CollectionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CollectionViewController.m; sourceTree = "<group>"; };
+		0EDDDFAC18CED5F100068F55 /* ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		0EDDDFAD18CED5F100068F55 /* ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		0EDDDFAF18CED82C00068F55 /* CollectionCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CollectionCell.h; sourceTree = "<group>"; };
+		0EDDDFB018CED82C00068F55 /* CollectionCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CollectionCell.m; sourceTree = "<group>"; };
+		0EDDDFB218CED84B00068F55 /* CollectionCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CollectionCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -115,10 +123,15 @@
 				0EDDDF8318CEB49300068F55 /* AppDelegate.h */,
 				0EDDDF8418CEB49300068F55 /* AppDelegate.m */,
 				0EDDDF8618CEB49300068F55 /* Main.storyboard */,
-				0EDDDF8918CEB49300068F55 /* ViewController.h */,
-				0EDDDF8A18CEB49300068F55 /* ViewController.m */,
 				0EDDDF8C18CEB49300068F55 /* Images.xcassets */,
 				0EDDDF7B18CEB49300068F55 /* Supporting Files */,
+				0EDDDFA918CEBA6A00068F55 /* CollectionViewController.h */,
+				0EDDDFAA18CEBA6A00068F55 /* CollectionViewController.m */,
+				0EDDDFAC18CED5F100068F55 /* ViewController.h */,
+				0EDDDFAD18CED5F100068F55 /* ViewController.m */,
+				0EDDDFAF18CED82C00068F55 /* CollectionCell.h */,
+				0EDDDFB018CED82C00068F55 /* CollectionCell.m */,
+				0EDDDFB218CED84B00068F55 /* CollectionCell.xib */,
 			);
 			path = TestCollectionView;
 			sourceTree = "<group>";
@@ -230,6 +243,7 @@
 			files = (
 				0EDDDF8D18CEB49300068F55 /* Images.xcassets in Resources */,
 				0EDDDF7F18CEB49300068F55 /* InfoPlist.strings in Resources */,
+				0EDDDFB318CED84B00068F55 /* CollectionCell.xib in Resources */,
 				0EDDDF8818CEB49300068F55 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -249,9 +263,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0EDDDF8B18CEB49300068F55 /* ViewController.m in Sources */,
+				0EDDDFAB18CEBA6A00068F55 /* CollectionViewController.m in Sources */,
 				0EDDDF8518CEB49300068F55 /* AppDelegate.m in Sources */,
+				0EDDDFAE18CED5F100068F55 /* ViewController.m in Sources */,
 				0EDDDF8118CEB49300068F55 /* main.m in Sources */,
+				0EDDDFB118CED82C00068F55 /* CollectionCell.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -456,6 +472,7 @@
 				0EDDDFA518CEB49300068F55 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		0EDDDFA618CEB49300068F55 /* Build configuration list for PBXNativeTarget "TestCollectionViewTests" */ = {
 			isa = XCConfigurationList;
@@ -464,6 +481,7 @@
 				0EDDDFA818CEB49300068F55 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

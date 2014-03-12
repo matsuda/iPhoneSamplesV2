@@ -1,21 +1,18 @@
 //
-//  ViewController.m
+//  CollectionViewController.m
 //  TestCollectionView
 //
 //  Created by Kosuke Matsuda on 2014/03/11.
 //  Copyright (c) 2014年 matsuda. All rights reserved.
 //
 
-#import "ViewController.h"
-#import "CollectionCell.h"
+#import "CollectionViewController.h"
 
-static NSString *CellIdentifier = @"Cell";
+@interface CollectionViewController ()
 
-@interface ViewController ()
-@property (weak, nonatomic) IBOutlet UICollectionView *collectionView;
 @end
 
-@implementation ViewController
+@implementation CollectionViewController
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -30,7 +27,6 @@ static NSString *CellIdentifier = @"Cell";
 {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-    [self.collectionView registerNib:[UINib nibWithNibName:@"CollectionCell" bundle:nil] forCellWithReuseIdentifier:CellIdentifier];
 }
 
 - (void)didReceiveMemoryWarning
@@ -62,9 +58,16 @@ static NSString *CellIdentifier = @"Cell";
 
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath
 {
-    CollectionCell *cell = (CollectionCell *)[collectionView dequeueReusableCellWithReuseIdentifier:CellIdentifier forIndexPath:indexPath];
-    cell.label.text = [NSString stringWithFormat:@"%d", indexPath.row];
+    static NSString *CellIdentifer = @"Cell";
+    UICollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:CellIdentifer forIndexPath:indexPath];
+    cell.backgroundColor = [UIColor greenColor];
     return cell;
+}
+
+- (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath
+{
+    NSString *message = [NSString stringWithFormat:@"%@", @(indexPath.row)];
+    [[[UIAlertView alloc] initWithTitle:nil message:message delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil] show];
 }
 
 @end

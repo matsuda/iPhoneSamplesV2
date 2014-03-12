@@ -1,5 +1,5 @@
 //
-//  ViewController.h
+//  CollectionCell.h
 //  TestCollectionView
 //
 //  Created by Kosuke Matsuda on 2014/03/11.
@@ -8,6 +8,8 @@
 
 #import <UIKit/UIKit.h>
 
-@interface ViewController : UIViewController <UICollectionViewDataSource, UICollectionViewDelegate>
+@interface CollectionCell : UICollectionViewCell
+
+@property (weak, nonatomic) IBOutlet UILabel *label;
 
 @end
