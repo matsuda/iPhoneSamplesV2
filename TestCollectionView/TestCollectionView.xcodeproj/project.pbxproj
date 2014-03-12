@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0E29AD1318D032B300B40353 /* CustomViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0E29AD1218D032B300B40353 /* CustomViewController.m */; };
+		0E29AD1618D05A8300B40353 /* CustomCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0E29AD1518D05A8300B40353 /* CustomCell.m */; };
+		0E29AD1818D05AA100B40353 /* CustomCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0E29AD1718D05AA100B40353 /* CustomCell.xib */; };
 		0EDDDF7518CEB49300068F55 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0EDDDF7418CEB49300068F55 /* Foundation.framework */; };
 		0EDDDF7718CEB49300068F55 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0EDDDF7618CEB49300068F55 /* CoreGraphics.framework */; };
 		0EDDDF7918CEB49300068F55 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0EDDDF7818CEB49300068F55 /* UIKit.framework */; };
@@ -37,6 +40,11 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0E29AD1118D032B300B40353 /* CustomViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustomViewController.h; sourceTree = "<group>"; };
+		0E29AD1218D032B300B40353 /* CustomViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CustomViewController.m; sourceTree = "<group>"; };
+		0E29AD1418D05A8300B40353 /* CustomCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustomCell.h; sourceTree = "<group>"; };
+		0E29AD1518D05A8300B40353 /* CustomCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CustomCell.m; sourceTree = "<group>"; };
+		0E29AD1718D05AA100B40353 /* CustomCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CustomCell.xib; sourceTree = "<group>"; };
 		0EDDDF7118CEB49300068F55 /* TestCollectionView.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TestCollectionView.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0EDDDF7418CEB49300068F55 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		0EDDDF7618CEB49300068F55 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -132,6 +140,11 @@
 				0EDDDFAF18CED82C00068F55 /* CollectionCell.h */,
 				0EDDDFB018CED82C00068F55 /* CollectionCell.m */,
 				0EDDDFB218CED84B00068F55 /* CollectionCell.xib */,
+				0E29AD1118D032B300B40353 /* CustomViewController.h */,
+				0E29AD1218D032B300B40353 /* CustomViewController.m */,
+				0E29AD1418D05A8300B40353 /* CustomCell.h */,
+				0E29AD1518D05A8300B40353 /* CustomCell.m */,
+				0E29AD1718D05AA100B40353 /* CustomCell.xib */,
 			);
 			path = TestCollectionView;
 			sourceTree = "<group>";
@@ -241,6 +254,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0E29AD1818D05AA100B40353 /* CustomCell.xib in Resources */,
 				0EDDDF8D18CEB49300068F55 /* Images.xcassets in Resources */,
 				0EDDDF7F18CEB49300068F55 /* InfoPlist.strings in Resources */,
 				0EDDDFB318CED84B00068F55 /* CollectionCell.xib in Resources */,
@@ -264,8 +278,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				0EDDDFAB18CEBA6A00068F55 /* CollectionViewController.m in Sources */,
+				0E29AD1318D032B300B40353 /* CustomViewController.m in Sources */,
 				0EDDDF8518CEB49300068F55 /* AppDelegate.m in Sources */,
 				0EDDDFAE18CED5F100068F55 /* ViewController.m in Sources */,
+				0E29AD1618D05A8300B40353 /* CustomCell.m in Sources */,
 				0EDDDF8118CEB49300068F55 /* main.m in Sources */,
 				0EDDDFB118CED82C00068F55 /* CollectionCell.m in Sources */,
 			);
