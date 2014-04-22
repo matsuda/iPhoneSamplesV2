@@ -1,0 +1,471 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		0E37F85F190653300060C398 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0E37F85E190653300060C398 /* Foundation.framework */; };
+		0E37F861190653300060C398 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0E37F860190653300060C398 /* CoreGraphics.framework */; };
+		0E37F863190653310060C398 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0E37F862190653300060C398 /* UIKit.framework */; };
+		0E37F869190653310060C398 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 0E37F867190653310060C398 /* InfoPlist.strings */; };
+		0E37F86B190653310060C398 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 0E37F86A190653310060C398 /* main.m */; };
+		0E37F86F190653310060C398 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 0E37F86E190653310060C398 /* AppDelegate.m */; };
+		0E37F872190653310060C398 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0E37F870190653310060C398 /* Main.storyboard */; };
+		0E37F875190653310060C398 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0E37F874190653310060C398 /* ViewController.m */; };
+		0E37F877190653310060C398 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0E37F876190653310060C398 /* Images.xcassets */; };
+		0E37F87E190653310060C398 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0E37F87D190653310060C398 /* XCTest.framework */; };
+		0E37F87F190653310060C398 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0E37F85E190653300060C398 /* Foundation.framework */; };
+		0E37F880190653310060C398 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0E37F862190653300060C398 /* UIKit.framework */; };
+		0E37F888190653310060C398 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 0E37F886190653310060C398 /* InfoPlist.strings */; };
+		0E37F88A190653310060C398 /* TestSQLCipherTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 0E37F889190653310060C398 /* TestSQLCipherTests.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		0E37F881190653310060C398 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 0E37F853190653300060C398 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 0E37F85A190653300060C398;
+			remoteInfo = TestSQLCipher;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		0E37F85B190653300060C398 /* TestSQLCipher.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TestSQLCipher.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		0E37F85E190653300060C398 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		0E37F860190653300060C398 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		0E37F862190653300060C398 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		0E37F866190653310060C398 /* TestSQLCipher-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "TestSQLCipher-Info.plist"; sourceTree = "<group>"; };
+		0E37F868190653310060C398 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		0E37F86A190653310060C398 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		0E37F86C190653310060C398 /* TestSQLCipher-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "TestSQLCipher-Prefix.pch"; sourceTree = "<group>"; };
+		0E37F86D190653310060C398 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		0E37F86E190653310060C398 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		0E37F871190653310060C398 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		0E37F873190653310060C398 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		0E37F874190653310060C398 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		0E37F876190653310060C398 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		0E37F87C190653310060C398 /* TestSQLCipherTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TestSQLCipherTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		0E37F87D190653310060C398 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
+		0E37F885190653310060C398 /* TestSQLCipherTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "TestSQLCipherTests-Info.plist"; sourceTree = "<group>"; };
+		0E37F887190653310060C398 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		0E37F889190653310060C398 /* TestSQLCipherTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TestSQLCipherTests.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		0E37F858190653300060C398 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0E37F861190653300060C398 /* CoreGraphics.framework in Frameworks */,
+				0E37F863190653310060C398 /* UIKit.framework in Frameworks */,
+				0E37F85F190653300060C398 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		0E37F879190653310060C398 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0E37F87E190653310060C398 /* XCTest.framework in Frameworks */,
+				0E37F880190653310060C398 /* UIKit.framework in Frameworks */,
+				0E37F87F190653310060C398 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		0E37F852190653300060C398 = {
+			isa = PBXGroup;
+			children = (
+				0E37F864190653310060C398 /* TestSQLCipher */,
+				0E37F883190653310060C398 /* TestSQLCipherTests */,
+				0E37F85D190653300060C398 /* Frameworks */,
+				0E37F85C190653300060C398 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		0E37F85C190653300060C398 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				0E37F85B190653300060C398 /* TestSQLCipher.app */,
+				0E37F87C190653310060C398 /* TestSQLCipherTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		0E37F85D190653300060C398 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				0E37F85E190653300060C398 /* Foundation.framework */,
+				0E37F860190653300060C398 /* CoreGraphics.framework */,
+				0E37F862190653300060C398 /* UIKit.framework */,
+				0E37F87D190653310060C398 /* XCTest.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		0E37F864190653310060C398 /* TestSQLCipher */ = {
+			isa = PBXGroup;
+			children = (
+				0E37F86D190653310060C398 /* AppDelegate.h */,
+				0E37F86E190653310060C398 /* AppDelegate.m */,
+				0E37F870190653310060C398 /* Main.storyboard */,
+				0E37F873190653310060C398 /* ViewController.h */,
+				0E37F874190653310060C398 /* ViewController.m */,
+				0E37F876190653310060C398 /* Images.xcassets */,
+				0E37F865190653310060C398 /* Supporting Files */,
+			);
+			path = TestSQLCipher;
+			sourceTree = "<group>";
+		};
+		0E37F865190653310060C398 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				0E37F866190653310060C398 /* TestSQLCipher-Info.plist */,
+				0E37F867190653310060C398 /* InfoPlist.strings */,
+				0E37F86A190653310060C398 /* main.m */,
+				0E37F86C190653310060C398 /* TestSQLCipher-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		0E37F883190653310060C398 /* TestSQLCipherTests */ = {
+			isa = PBXGroup;
+			children = (
+				0E37F889190653310060C398 /* TestSQLCipherTests.m */,
+				0E37F884190653310060C398 /* Supporting Files */,
+			);
+			path = TestSQLCipherTests;
+			sourceTree = "<group>";
+		};
+		0E37F884190653310060C398 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				0E37F885190653310060C398 /* TestSQLCipherTests-Info.plist */,
+				0E37F886190653310060C398 /* InfoPlist.strings */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		0E37F85A190653300060C398 /* TestSQLCipher */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 0E37F88D190653310060C398 /* Build configuration list for PBXNativeTarget "TestSQLCipher" */;
+			buildPhases = (
+				0E37F857190653300060C398 /* Sources */,
+				0E37F858190653300060C398 /* Frameworks */,
+				0E37F859190653300060C398 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = TestSQLCipher;
+			productName = TestSQLCipher;
+			productReference = 0E37F85B190653300060C398 /* TestSQLCipher.app */;
+			productType = "com.apple.product-type.application";
+		};
+		0E37F87B190653310060C398 /* TestSQLCipherTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 0E37F890190653310060C398 /* Build configuration list for PBXNativeTarget "TestSQLCipherTests" */;
+			buildPhases = (
+				0E37F878190653310060C398 /* Sources */,
+				0E37F879190653310060C398 /* Frameworks */,
+				0E37F87A190653310060C398 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				0E37F882190653310060C398 /* PBXTargetDependency */,
+			);
+			name = TestSQLCipherTests;
+			productName = TestSQLCipherTests;
+			productReference = 0E37F87C190653310060C398 /* TestSQLCipherTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		0E37F853190653300060C398 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0510;
+				ORGANIZATIONNAME = matsuda;
+				TargetAttributes = {
+					0E37F87B190653310060C398 = {
+						TestTargetID = 0E37F85A190653300060C398;
+					};
+				};
+			};
+			buildConfigurationList = 0E37F856190653300060C398 /* Build configuration list for PBXProject "TestSQLCipher" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 0E37F852190653300060C398;
+			productRefGroup = 0E37F85C190653300060C398 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				0E37F85A190653300060C398 /* TestSQLCipher */,
+				0E37F87B190653310060C398 /* TestSQLCipherTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		0E37F859190653300060C398 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0E37F877190653310060C398 /* Images.xcassets in Resources */,
+				0E37F869190653310060C398 /* InfoPlist.strings in Resources */,
+				0E37F872190653310060C398 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		0E37F87A190653310060C398 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0E37F888190653310060C398 /* InfoPlist.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		0E37F857190653300060C398 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0E37F875190653310060C398 /* ViewController.m in Sources */,
+				0E37F86F190653310060C398 /* AppDelegate.m in Sources */,
+				0E37F86B190653310060C398 /* main.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		0E37F878190653310060C398 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0E37F88A190653310060C398 /* TestSQLCipherTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		0E37F882190653310060C398 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 0E37F85A190653300060C398 /* TestSQLCipher */;
+			targetProxy = 0E37F881190653310060C398 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		0E37F867190653310060C398 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				0E37F868190653310060C398 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		0E37F870190653310060C398 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				0E37F871190653310060C398 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		0E37F886190653310060C398 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				0E37F887190653310060C398 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		0E37F88B190653310060C398 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		0E37F88C190653310060C398 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		0E37F88E190653310060C398 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "TestSQLCipher/TestSQLCipher-Prefix.pch";
+				INFOPLIST_FILE = "TestSQLCipher/TestSQLCipher-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		0E37F88F190653310060C398 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "TestSQLCipher/TestSQLCipher-Prefix.pch";
+				INFOPLIST_FILE = "TestSQLCipher/TestSQLCipher-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+		0E37F891190653310060C398 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/TestSQLCipher.app/TestSQLCipher";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "TestSQLCipher/TestSQLCipher-Prefix.pch";
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = "TestSQLCipherTests/TestSQLCipherTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Debug;
+		};
+		0E37F892190653310060C398 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/TestSQLCipher.app/TestSQLCipher";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "TestSQLCipher/TestSQLCipher-Prefix.pch";
+				INFOPLIST_FILE = "TestSQLCipherTests/TestSQLCipherTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		0E37F856190653300060C398 /* Build configuration list for PBXProject "TestSQLCipher" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				0E37F88B190653310060C398 /* Debug */,
+				0E37F88C190653310060C398 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		0E37F88D190653310060C398 /* Build configuration list for PBXNativeTarget "TestSQLCipher" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				0E37F88E190653310060C398 /* Debug */,
+				0E37F88F190653310060C398 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		0E37F890190653310060C398 /* Build configuration list for PBXNativeTarget "TestSQLCipherTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				0E37F891190653310060C398 /* Debug */,
+				0E37F892190653310060C398 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 0E37F853190653300060C398 /* Project object */;
+}
