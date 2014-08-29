@@ -8,6 +8,9 @@
 
 #import <UIKit/UIKit.h>
 
+@class FMDatabase;
 @interface ViewController : UIViewController
+
+@property (strong, nonatomic) FMDatabase *database;
 
 @end

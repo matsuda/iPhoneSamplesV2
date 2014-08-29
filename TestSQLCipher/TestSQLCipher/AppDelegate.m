@@ -7,12 +7,21 @@
 //
 
 #import "AppDelegate.h"
+#import <FMDatabase.h>
+#import "ViewController.h"
 
 @implementation AppDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     // Override point for customization after application launch.
+    NSString *dir = [NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) firstObject];
+    NSString *dbPath = [dir stringByAppendingPathComponent:@"test.db"];
+    self.database = [FMDatabase databaseWithPath:dbPath];
+    self.database.traceExecution = YES;
+    BOOL isOpen = [self.database open];
+    NSLog(@"isOpen DB >>>>>>>>> %d", isOpen);
+    [(ViewController *)self.window.rootViewController setDatabase:self.database];
     return YES;
 }
 							
@@ -26,11 +35,13 @@
 {
     // Use this method to release shared resources, save user data, invalidate timers, and store enough application state information to restore your application to its current state in case it is terminated later. 
     // If your application supports background execution, this method is called instead of applicationWillTerminate: when the user quits.
+    [self.database close];
 }
 
 - (void)applicationWillEnterForeground:(UIApplication *)application
 {
     // Called as part of the transition from the background to the inactive state; here you can undo many of the changes made on entering the background.
+    [self.database open];
 }
 
 - (void)applicationDidBecomeActive:(UIApplication *)application
@@ -41,6 +52,7 @@
 - (void)applicationWillTerminate:(UIApplication *)application
 {
     // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
+    [self.database close];
 }
 
 @end
