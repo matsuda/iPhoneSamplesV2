@@ -54,17 +54,14 @@ NSString *BeaconUUID = @"4DF4F424-546E-429C-8E3F-CE4319A9251A";
 
 - (IBAction)startMonitor:(id)sender
 {
-    [self updateMonitoredRegion];
+    if ([CLLocationManager authorizationStatus] == kCLAuthorizationStatusAuthorized) {
+        [self updateMonitoredRegion];
+    }
 }
 
 - (IBAction)stopMonitor:(id)sender
 {
-    if ([CLLocationManager isRangingAvailable]) {
-        [self.locationManager stopRangingBeaconsInRegion:self.region];
-    }
-    [self.locationManager stopMonitoringForRegion:self.region];
-    self.leftBarButton.enabled = YES;
-    self.rightBarButton.enabled = NO;
+    [self stopMonitoredRegion];
 }
 
 - (void)updateMonitoredRegion
@@ -74,10 +71,24 @@ NSString *BeaconUUID = @"4DF4F424-546E-429C-8E3F-CE4319A9251A";
     self.rightBarButton.enabled = YES;
 }
 
+- (void)stopMonitoredRegion
+{
+    if ([CLLocationManager isRangingAvailable]) {
+        [self.locationManager stopRangingBeaconsInRegion:self.region];
+    }
+    [self.locationManager stopMonitoringForRegion:self.region];
+    self.leftBarButton.enabled = YES;
+    self.rightBarButton.enabled = NO;
+}
+
 - (void)locationManager:(CLLocationManager *)manager didChangeAuthorizationStatus:(CLAuthorizationStatus)status
 {
     APPLog(@"%d", status);
+    if (status != kCLAuthorizationStatusAuthorized) {
+        [self stopMonitoredRegion];
+    }
 }
+
 - (void)locationManager:(CLLocationManager *)manager didStartMonitoringForRegion:(CLRegion *)region
 {
     APPLog();
