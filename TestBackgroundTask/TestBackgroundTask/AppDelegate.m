@@ -17,6 +17,13 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
+
+    /**
+     http://dev.classmethod.jp/references/ios-background-fetch/
+     http://wonderpla.net/blog/engineer/BackgroundFetch/
+     */
+    [application setMinimumBackgroundFetchInterval:UIApplicationBackgroundFetchIntervalMinimum];
+//    [[UIApplication sharedApplication] setMinimumBackgroundFetchInterval:10];
     return YES;
 }
 
@@ -40,6 +47,17 @@
 
 - (void)applicationWillTerminate:(UIApplication *)application {
     // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
+}
+
+- (void)application:(UIApplication *)application performFetchWithCompletionHandler:(void (^)(UIBackgroundFetchResult))completionHandler
+{
+    APPLog(@"%d", [NSThread isMainThread]); // -> YES
+
+    UILocalNotification *notification = [UILocalNotification new];
+    notification.alertBody = @"performFetchWithCompletionHandler";
+    [application presentLocalNotificationNow:notification];
+
+    completionHandler(UIBackgroundFetchResultNewData);
 }
 
 @end
