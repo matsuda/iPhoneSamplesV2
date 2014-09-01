@@ -13,7 +13,7 @@ NSString *BeaconUUID = @"4DF4F424-546E-429C-8E3F-CE4319A9251A";
 
 @import CoreLocation;
 
-@interface ViewController () <CLLocationManagerDelegate>
+@interface ViewController () <CLLocationManagerDelegate, NSURLSessionDownloadDelegate>
 @property (strong, nonatomic) CLLocationManager *locationManager;
 @property (strong, nonatomic) NSUUID *uuid;
 @property (strong, nonatomic) CLBeaconRegion *region;
@@ -27,6 +27,9 @@ NSString *BeaconUUID = @"4DF4F424-546E-429C-8E3F-CE4319A9251A";
 
 @property (weak, nonatomic) IBOutlet UIBarButtonItem *leftBarButton;
 @property (weak, nonatomic) IBOutlet UIBarButtonItem *rightBarButton;
+
+@property (strong, nonatomic) NSURLSession *session;
+
 @end
 
 @implementation ViewController
@@ -62,6 +65,22 @@ NSString *BeaconUUID = @"4DF4F424-546E-429C-8E3F-CE4319A9251A";
 - (IBAction)stopMonitor:(id)sender
 {
     [self stopMonitoredRegion];
+}
+
+- (NSURLSession *)session
+{
+    if (!_session) {
+        NSString *identifier = @"BackgroundSessionConfiguration";
+        NSURLSessionConfiguration *configuration = [NSURLSessionConfiguration backgroundSessionConfiguration:identifier];
+        NSLog(@"configuration >>> %@", configuration);
+        NSLog(@"identifier >>> %@", configuration.identifier);
+        NSLog(@"networkServiceType >>> %d", configuration.networkServiceType);
+        NSLog(@"discretionary >>> %d", configuration.discretionary);
+        NSURLSession *session = [NSURLSession sessionWithConfiguration:configuration delegate:self delegateQueue:nil];
+        APPLog(@"session >>>>> %@", session);
+        _session = session;
+    }
+    return _session;
 }
 
 - (void)updateMonitoredRegion
@@ -117,6 +136,7 @@ NSString *BeaconUUID = @"4DF4F424-546E-429C-8E3F-CE4319A9251A";
             if ([region isMemberOfClass:[CLBeaconRegion class]] && [CLLocationManager isRangingAvailable]) {
                 [self.locationManager startRangingBeaconsInRegion:(CLBeaconRegion *)region];
             }
+            [self startSession];
             break;
         }
         case CLRegionStateOutside:
@@ -154,6 +174,69 @@ NSString *BeaconUUID = @"4DF4F424-546E-429C-8E3F-CE4319A9251A";
         self.accuracyLabel.text = [NSString stringWithFormat:@"%f", beacon.accuracy];
         self.rssiLabel.text = [NSString stringWithFormat:@"%d", beacon.rssi];
     }
+}
+
+- (void)startSession
+{
+    NSURL *url = [NSURL URLWithString:@"http://192.168.10.178:9393/coupons/list"];
+    NSURLSessionDownloadTask *task = [self.session downloadTaskWithURL:url];
+    [task resume];
+}
+
+- (void)URLSession:(NSURLSession *)session downloadTask:(NSURLSessionDownloadTask *)downloadTask didResumeAtOffset:(int64_t)fileOffset expectedTotalBytes:(int64_t)expectedTotalBytes
+{
+    APPLog();
+}
+
+- (void)URLSession:(NSURLSession *)session downloadTask:(NSURLSessionDownloadTask *)downloadTask didWriteData:(int64_t)bytesWritten totalBytesWritten:(int64_t)totalBytesWritten totalBytesExpectedToWrite:(int64_t)totalBytesExpectedToWrite
+{
+    APPLog();
+}
+
+- (void)URLSession:(NSURLSession *)session downloadTask:(NSURLSessionDownloadTask *)downloadTask didFinishDownloadingToURL:(NSURL *)location
+{
+    APPLog(@"location >>>>> %@", location);
+    NSHTTPURLResponse *response = (NSHTTPURLResponse *)downloadTask.response;
+    APPLog(@"statusCode >>> >%d", (int)response.statusCode);
+    if (response.statusCode != 200) {
+        return;
+    }
+
+    NSData *data = [NSData dataWithContentsOfURL:location];
+//    NSString *str = [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];
+//    NSLog(@"response string >>> %@", str);
+    NSError *error = nil;
+    NSDictionary *json = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingAllowFragments error:&error];
+    NSLog(@"json >>>> %@", json);
+    if (error) {
+        NSLog(@"json error >>> %@", error);
+    } else {
+        if (json) {
+            NSArray *coupons = json[@"coupons"];
+            if ([coupons count] > 0) {
+                NSDictionary *coupon = [coupons firstObject];
+                dispatch_async(dispatch_get_main_queue(), ^{
+                    UILocalNotification *notification = [UILocalNotification new];
+                    notification.alertBody = [NSString stringWithFormat:@"%@", coupon[@"name"]];
+                    [[UIApplication sharedApplication] presentLocalNotificationNow:notification];
+                });
+            }
+        }
+    }
+}
+
+- (void)URLSession:(NSURLSession *)session task:(NSURLSessionTask *)task didCompleteWithError:(NSError *)error
+{
+    APPLog();
+    if (error) {
+        NSLog(@"error >>>>> %@", error);
+    }
+    [session invalidateAndCancel];
+}
+
+- (void)URLSessionDidFinishEventsForBackgroundURLSession:(NSURLSession *)session
+{
+    APPLog();
 }
 
 @end
