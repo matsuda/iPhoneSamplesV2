@@ -43,16 +43,28 @@
 
 - (void)initialize
 {
-    [self updateViews];
+    self.startColor = [UIColor colorWithRed:100/255.0 green:80/255.0 blue:120/255.0 alpha:1];
+    self.endColor = [UIColor colorWithRed:120/255.0 green:80/255.0 blue:80/255.0 alpha:1];
+    self.horizontal = NO;
 }
 
 - (void)updateViews
 {
     CAGradientLayer *gradient = (CAGradientLayer *)self.layer;
-    gradient.colors = @[
-                        (id)[UIColor colorWithRed:100/255.0 green:80/255.0 blue:120/255.0 alpha:1].CGColor,
-                        (id)[UIColor colorWithRed:120/255.0 green:80/255.0 blue:80/255.0 alpha:1].CGColor,
-                        ];
+    gradient.colors = @[ (id)self.startColor.CGColor, (id)self.endColor.CGColor ];
+    if (self.isHorizontal) {
+        gradient.startPoint = CGPointMake(0, 0.5);
+        gradient.endPoint = CGPointMake(1, 0.5);
+    } else {
+        gradient.startPoint = CGPointMake(0.5, 0);
+        gradient.endPoint = CGPointMake(0.5, 1);
+    }
+}
+
+- (void)layoutSubviews
+{
+    [super layoutSubviews];
+    [self updateViews];
 }
 
 @end
