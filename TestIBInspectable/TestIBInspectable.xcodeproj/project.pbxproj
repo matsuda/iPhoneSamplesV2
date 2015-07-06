@@ -14,6 +14,7 @@
 		0EA6B6B31B4A84730020B211 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0EA6B6B21B4A84730020B211 /* Images.xcassets */; };
 		0EA6B6B61B4A84730020B211 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0EA6B6B41B4A84730020B211 /* LaunchScreen.xib */; };
 		0EA6B6C21B4A84730020B211 /* TestIBInspectableTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 0EA6B6C11B4A84730020B211 /* TestIBInspectableTests.m */; };
+		0EA6B6CD1B4A84C00020B211 /* GradientView.m in Sources */ = {isa = PBXBuildFile; fileRef = 0EA6B6CC1B4A84C00020B211 /* GradientView.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -40,6 +41,8 @@
 		0EA6B6BB1B4A84730020B211 /* TestIBInspectableTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TestIBInspectableTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		0EA6B6C01B4A84730020B211 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		0EA6B6C11B4A84730020B211 /* TestIBInspectableTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TestIBInspectableTests.m; sourceTree = "<group>"; };
+		0EA6B6CB1B4A84C00020B211 /* GradientView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GradientView.h; sourceTree = "<group>"; };
+		0EA6B6CC1B4A84C00020B211 /* GradientView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GradientView.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -89,6 +92,8 @@
 				0EA6B6B21B4A84730020B211 /* Images.xcassets */,
 				0EA6B6B41B4A84730020B211 /* LaunchScreen.xib */,
 				0EA6B6A51B4A84730020B211 /* Supporting Files */,
+				0EA6B6CB1B4A84C00020B211 /* GradientView.h */,
+				0EA6B6CC1B4A84C00020B211 /* GradientView.m */,
 			);
 			path = TestIBInspectable;
 			sourceTree = "<group>";
@@ -221,6 +226,7 @@
 			files = (
 				0EA6B6AE1B4A84730020B211 /* ViewController.m in Sources */,
 				0EA6B6AB1B4A84730020B211 /* AppDelegate.m in Sources */,
+				0EA6B6CD1B4A84C00020B211 /* GradientView.m in Sources */,
 				0EA6B6A81B4A84730020B211 /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
